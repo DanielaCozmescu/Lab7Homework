@@ -18,26 +18,6 @@ public class Bottle {
         return brand;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public int getTotalCapacity() {
-        return totalCapacity;
-    }
-
-    public void setTotalCapacity(int totalCapacity) {
-        this.totalCapacity = totalCapacity;
-    }
-
-    public int getAvailableLiquid() {
-        return availableLiquid;
-    }
-
-    public void setAvailableLiquid(int availableLiquid) {
-        this.availableLiquid = availableLiquid;
-    }
-
     public void open() {
         if (isOpen()){
             System.out.println("The " + this.getBrand() + " bottle is already open");
@@ -47,7 +27,7 @@ public class Bottle {
         }
     }
 
-    public void closed(){
+    public void close(){
         if (isClosed()){
             System.out.println("The " + this.getBrand() + " bottle is already closed");
         } else {
@@ -64,12 +44,34 @@ public class Bottle {
         return !open;
     }
 
-    public void setOpen(boolean open) {
-        this.open = open;
-    }
-
     boolean moreLiquid(){
         return availableLiquid > totalCapacity;
     }
+
+    boolean hasAvailableLiquid() {
+        return availableLiquid > 0;
+    }
+
+    int getAvailableLiquid() {
+        return availableLiquid;
+    }
+
+    int availableCapacity() {
+        return totalCapacity - availableLiquid;
+    }
+
+    String drink(int quantity){
+        if(isClosed()) {
+            return "You must open the bottle  in order to drink from it";
+        }
+        if (availableLiquid >= quantity) {
+            availableLiquid = availableLiquid - quantity;
+            return "You drank " + quantity + " and you have left " + availableLiquid + " juice";
+        } else {
+            return "You don't have enough juice.";
+        }
+    }
+
+
 
 }

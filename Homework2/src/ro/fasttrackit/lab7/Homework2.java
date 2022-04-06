@@ -7,7 +7,7 @@ public class Homework2 {
         Product product3 = new Product("Piept pui ", 25, 0, "Carne");
         Product product4 = new Product("Salam ", 86, 3, "Carne");
         Product product5 = new Product("Sampon ", 16, 0, "Sanitare");
-        Product product6 = new Product("Perie ", 66, 0, " ");
+        Product product6 = new Product("Perie ", 66, 0, "Par");
 
 
         printProduct(product1);
@@ -26,7 +26,7 @@ public class Homework2 {
         } else if (product.isCategory("Sanitare")) {
             System.out.println("Sanitare");
         } else {
-            System.out.println("Produs neintrgistrat");
+            System.out.println("Categorie neintrgistrata");
         }
 
         if (product.hasStock()) {
