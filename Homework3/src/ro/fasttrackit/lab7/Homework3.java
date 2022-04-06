@@ -20,8 +20,6 @@ public class Homework3 {
             System.out.println("The " + bottle.getBrand() + " bottle is overflowing.");
         }
 
-
-
     }
 
 }
