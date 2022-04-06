@@ -61,15 +61,17 @@ public class Bottle {
     }
 
     String drink(int quantity){
+        //drink(-4)
+        //drink(0)
         if(isClosed()) {
             return "You must open the bottle  in order to drink from it";
         }
-        if (availableLiquid >= quantity) {
-            availableLiquid = availableLiquid - quantity;
-            return "You drank " + quantity + " and you have left " + availableLiquid + " juice";
-        } else {
+        if (availableLiquid < quantity) {
             return "You don't have enough juice.";
         }
+
+        availableLiquid = availableLiquid - quantity;
+        return "You drank " + quantity + " and you have left " + availableLiquid + " juice";
     }
 
 
